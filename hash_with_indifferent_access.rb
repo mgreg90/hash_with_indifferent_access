@@ -7,8 +7,8 @@
 module Mike
   class HashWithIndifferentAccess
 
-    def initialize(hash)
-      @source_hash = hash.map do |k, v|
+    def initialize(source_hash)
+      @source_hash = source_hash.map do |k, v|
         k = k.is_a?(Symbol) ? k.to_s : k
         v = v.is_a?(Hash) ? HashWithIndifferentAccess.new(v) : v
         v = if v.respond_to?(:map)
