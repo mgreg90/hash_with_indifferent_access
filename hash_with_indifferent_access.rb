@@ -43,7 +43,7 @@ module Mike
       end
 
       def to_s
-        @source_hash.inspect
+        @source_hash.to_s
       end
 
       def method_missing(method, *args, &block)
